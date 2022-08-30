@@ -1,0 +1,31 @@
+
+{% extends 'blog/base.html' %}
+{%load static%}
+{%block content%}
+<div class="row m-2 align-item-center justify-content-center g-0"> 
+    <div class="col-md-6 "> 
+        <div class="text-white"> 
+               {%for tutorial  in tutorials%}
+                <h5>{{tutorial.title}} by <span><em>{{tutorial.author}}  on {{tutorial.created_at}}</em></span></h5>
+                <P><em>{{tutorial.content}}</em><a href="{%url 'login'%}" class="lead ">tutorial</a></p>
+                    <p></p>
+               {%endfor%}
+        </div>
+    </div>        
+    <div class="col-md-6 ">
+        <div class="card text-black border-0" style="width: 30rem; height:30rem;">
+            <img class="card-img-top" src="{%static 'img/mima.jpeg'%}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">PYTHON</h5>
+              <p class="card-text"><a href="{%url 'login'%}" class="card-link">classes in python</a></p>
+             <p class="card-text"> <a href="{%url 'login'%}" class="card-link">class inheritance</a></p>
+             <p class="card-text"> <a href="{%url 'login'%}" class="card-link">methods and objects</a></p>
+             <p class="card-text"> <a href="{%url 'login'%}" class="card-link">private methods and private variables</a></p>
+              
+            </div>
+        </div>   
+    </div>    
+          
+</div> 
+
+{%endblock%}
